@@ -22,7 +22,12 @@ public class AuthenticationApp extends Application {
 
         this.primaryStage = primaryStage;
 
-        primaryStage.setTitle("Аутентификация пользователя");
+        primaryStage.setTitle("JavaFX Application 1.0");
+        primaryStage.setScene(getAuthorizationScene());
+        primaryStage.show();
+    }
+
+    private Scene getAuthorizationScene(){
 
         VBox vbox = new VBox(10);
         Scene scene = new Scene(vbox, 300, 250);
@@ -57,8 +62,8 @@ public class AuthenticationApp extends Application {
 
         vbox.getChildren().addAll(welcomeLabel, usernameLabel, usernameField, passwordLabel, passwordField, authenticateButton, resultText);
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        return scene;
+
     }
 
     @Override
