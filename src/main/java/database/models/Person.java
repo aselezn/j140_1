@@ -1,4 +1,4 @@
-package DataBase.models;
+package database.models;
 
 
 import java.util.Objects;

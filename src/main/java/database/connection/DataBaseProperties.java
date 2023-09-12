@@ -1,4 +1,4 @@
-package DataBase.connection;
+package database.connection;
 
 import java.io.IOException;
 import java.io.InputStream;

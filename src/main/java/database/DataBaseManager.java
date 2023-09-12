@@ -1,6 +1,6 @@
-package DataBase;
+package database;
 
-import DataBase.connection.DataBaseConnection;
+import database.connection.DataBaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

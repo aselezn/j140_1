@@ -1,6 +1,6 @@
 package app;
 
-import DataBase.DataBaseManager;
+import database.DataBaseManager;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -31,11 +31,11 @@ public class AuthenticationApp extends Application {
 
     private Scene getAuthorizationScene(){
 
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
+        GridPane root = new GridPane();
+        root.setAlignment(Pos.CENTER);
+        root.setHgap(10);
+        root.setVgap(10);
+        root.setPadding(new Insets(25, 25, 25, 25));
 
         Font customFont = Font.font("Arial", 16);
 
@@ -66,15 +66,15 @@ public class AuthenticationApp extends Application {
             }
         });
 
-        grid.add(welcomeLabel, 0, 0, 2, 1);
-        grid.add(usernameLabel, 0, 1);
-        grid.add(usernameField, 1, 1);
-        grid.add(passwordLabel, 0, 2);
-        grid.add(passwordField, 1, 2);
-        grid.add(authenticateButton, 0, 3, 2, 1);
-        grid.add(resultText, 0, 4, 2, 1);
+        root.add(welcomeLabel, 0, 0, 2, 1);
+        root.add(usernameLabel, 0, 1);
+        root.add(usernameField, 1, 1);
+        root.add(passwordLabel, 0, 2);
+        root.add(passwordField, 1, 2);
+        root.add(authenticateButton, 0, 3, 2, 1);
+        root.add(resultText, 0, 4, 2, 1);
 
-        Scene scene = new Scene(grid, 400, 300);
+        Scene scene = new Scene(root, 400, 300);
 
         return scene;
 
