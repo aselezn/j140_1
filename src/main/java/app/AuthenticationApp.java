@@ -2,12 +2,14 @@ package app;
 
 import DataBase.DataBaseManager;
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -29,8 +31,11 @@ public class AuthenticationApp extends Application {
 
     private Scene getAuthorizationScene(){
 
-        VBox vbox = new VBox(10);
-        Scene scene = new Scene(vbox, 300, 250);
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
 
         Font customFont = Font.font("Arial", 16);
 
@@ -46,6 +51,7 @@ public class AuthenticationApp extends Application {
         Button authenticateButton = new Button("Войти");
 
         Text resultText = new Text();
+        resultText.setFill(Color.RED);
 
         authenticateButton.setOnAction(e -> {
             String username = usernameField.getText();
@@ -60,7 +66,15 @@ public class AuthenticationApp extends Application {
             }
         });
 
-        vbox.getChildren().addAll(welcomeLabel, usernameLabel, usernameField, passwordLabel, passwordField, authenticateButton, resultText);
+        grid.add(welcomeLabel, 0, 0, 2, 1);
+        grid.add(usernameLabel, 0, 1);
+        grid.add(usernameField, 1, 1);
+        grid.add(passwordLabel, 0, 2);
+        grid.add(passwordField, 1, 2);
+        grid.add(authenticateButton, 0, 3, 2, 1);
+        grid.add(resultText, 0, 4, 2, 1);
+
+        Scene scene = new Scene(grid, 400, 300);
 
         return scene;
 
